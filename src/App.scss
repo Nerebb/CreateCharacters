@@ -10,7 +10,7 @@
 
 .container {
   width: 90%;
-  height: 100vh;
+  height: auto;
   margin: auto;
 
   display: flex;
@@ -43,45 +43,12 @@
   }
 
   .PageContent {
+    margin: auto;
     max-width: 1200px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
-
-    .btn {
-      &-create {
-        width: 200px;
-        height: 50px;
-        margin-bottom: 20px;
-
-        border-radius: 10px;
-        border: 0.5px solid transparent;
-
-        background: var(--main-color1);
-        background: -moz-linear-gradient(45deg, var(--main-color1) 0%, var(--main-color2) 100%);
-        background: -webkit-linear-gradient(45deg, var(--main-color1) 0%, var(--main-color2) 100%);
-        background: linear-gradient(45deg, var(--main-color1) 0%, var(--main-color2) 100%);
-
-        &:active {
-          box-shadow: inset 0 0 5px 1px rgba(0, 0, 0/10)
-        }
-      }
-
-      &-img {
-        margin: 5px;
-        border-radius: 10px;
-        box-shadow: 0 0 0 1px rgb(0 0 0 / 15%);
-        height: 50px;
-        overflow: hidden;
-        position: relative;
-        width: 50px;
-
-        &:hover {
-          background-color: #0BCBB120;
-          transition: 0.5s;
-        }
-      }
-    }
 
     .character {
       &-frame {
@@ -90,7 +57,9 @@
         border: 2px solid var(--main-color1);
         border-radius: 20px;
 
-        position: relative;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
       }
     }
 
@@ -115,6 +84,7 @@
           padding: 12px;
           border-radius: 20px;
           border: 2px solid var(--main-color1);
+          margin-bottom: 35px;
 
           img {
             top: 35px;
@@ -123,7 +93,56 @@
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
           }
+
+          .layer_1,
+          .layer_2,
+          .layer_3 {
+            top: 20px;
+          }
         }
+      }
+    }
+  }
+
+  .btn {
+    &-create {
+      width: 200px;
+      height: 50px;
+      margin: 20px 0;
+
+      border-radius: 10px;
+      border: 0.5px solid transparent;
+
+      background: var(--main-color1);
+      background: -moz-linear-gradient(45deg, var(--main-color1) 0%, var(--main-color2) 100%);
+      background: -webkit-linear-gradient(45deg, var(--main-color1) 0%, var(--main-color2) 100%);
+      background: linear-gradient(45deg, var(--main-color1) 0%, var(--main-color2) 100%);
+
+      font-weight: bold;
+      color: whitesmoke;
+
+      &:active {
+        box-shadow: inset 0 0 5px 1px rgba(0, 0, 0/10)
+      }
+    }
+
+    &-img {
+      margin: 5px;
+      border-radius: 10px;
+      box-shadow: 0 0 0 1px rgb(0 0 0 / 15%);
+      height: 50px;
+      overflow: hidden;
+      position: relative;
+      width: 50px;
+      background-color: #fff;
+
+      &.active {
+        background-color: #bde2dd;
+      }
+
+      &:hover {
+        background-color: #bde2dd;
+        transition: 0.5s;
       }
     }
   }

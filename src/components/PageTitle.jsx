@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import FrameChar from "./FrameChar";
+import React from "react";
 
 const PageTitle = () => {
   return (
